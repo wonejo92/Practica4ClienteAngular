@@ -1,1 +1,39 @@
 <p>usuarios works!</p>
+
+<h1>Creacion de cuenta</h1>
+
+<form [formGroup]="profileForm" (ngSubmit)="guardarDatos()">
+
+<label>
+    Nombre:
+    <input type="text" formControlName="nombre" required>
+</label>
+
+<label>
+    Apellido:
+    <input type="text" formControlName="apellido" required>
+</label>
+
+<label>
+    Telefono:
+    <input type="text" formControlName="telefono" required>
+</label>
+
+<label>
+    Cedula:
+    <input type="text" formControlName="cedula" required>
+</label>
+
+<label>
+    Correo:
+    <input type="text" formControlName="correo" required>
+</label>
+
+<label>
+    Contraseña:
+    <input type="text" formControlName="contrasena" required>
+</label>
+
+</form>
+
+<button type="submit" [disabled]="!profileForm.valid">Submit</button>
