@@ -9,8 +9,17 @@ import { ProductosService } from '../../Services/productos.service';
 export class ProductosComponent implements OnInit {
 
   public productos: any=[];
+<<<<<<< HEAD
   public option: any;
+=======
 
+  public item:any;
+  public obj:any;
+  public opcion:any;
+  public option='OPTION';
+>>>>>>> 79369c144a96e90708ebd004b46674333026a5d7
+
+  
   constructor(private proService: ProductosService ) { }
 
   ngOnInit(): void {
@@ -20,8 +29,17 @@ export class ProductosComponent implements OnInit {
       console.log(data);
     }, (error)=>{
       console.log(error)
+<<<<<<< HEAD
     } 
+=======
+      
+    }
+
+    
+>>>>>>> 79369c144a96e90708ebd004b46674333026a5d7
     )
   }
+
+  
 
 }
