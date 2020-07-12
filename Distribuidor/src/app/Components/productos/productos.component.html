@@ -1,1 +1,23 @@
 <p>productos works!</p>
+<hr>
+<div *ngFor='let producto of productos'>
+    <label>Nombre:</label>
+    <h2>{{producto.nombre | uppercase}}</h2>
+    <label>Descripcion</label>
+    <p>{{producto.descripcion}}</p>
+    <label>PreciP</label>
+    <p>{{producto.preciopublico}}</p>
+    <label>PrecioU</label>
+    <p>{{producto.preciounitario}}</p>
+    <label>Stock:</label>
+    <p>{{producto.stock}}</p>
+    <label>ID Categoria</label>
+    <p>{{producto.categoria.id}}</p>
+</div>
+
+
+<p>
+    <select name="miselect">
+    <option [value]="item" *ngFor="let item of productos">{{item.nombre}}</option>
+    </select>
+</p>
