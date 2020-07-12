@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Distribuidor"
+    }
+  },
+  "defaultProject": "Distribuidor",
+  "cli": {
+    "analytics": "4d97301f-fac7-4346-825f-cd8326cf4d25"
+  }
 }
