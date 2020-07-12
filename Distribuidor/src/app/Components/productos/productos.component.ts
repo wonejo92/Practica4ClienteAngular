@@ -20,6 +20,7 @@ export class ProductosComponent implements OnInit {
     }, (error)=>{
       console.log(error)
     }
+
     
     )
   }
