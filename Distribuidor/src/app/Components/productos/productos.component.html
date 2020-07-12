@@ -17,8 +17,11 @@
 
 
 <p>
-    <select name="Productos" [(ngModel)]="option">
+    <select name="Productos" [(ngModel)]="opcion">
     <option [value]="item" *ngFor="let item of productos">{{item.nombre}}</option>
     </select>
 </p>
-<p>Tu opcion es:{{option}}</p>
+
+<p>Tu opcion es:{{opcion}}</p>
+
+
