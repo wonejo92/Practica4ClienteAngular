@@ -17,7 +17,8 @@
 
 
 <p>
-    <select name="miselect">
+    <select name="Productos" [(ngModel)]="option">
     <option [value]="item" *ngFor="let item of productos">{{item.nombre}}</option>
     </select>
 </p>
+<p>Tu opcion es:{{option}}</p>
