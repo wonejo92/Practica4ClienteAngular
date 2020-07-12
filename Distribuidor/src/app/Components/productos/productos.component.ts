@@ -9,15 +9,10 @@ import { ProductosService } from '../../Services/productos.service';
 export class ProductosComponent implements OnInit {
 
   public productos: any=[];
-<<<<<<< HEAD
   public option: any;
-=======
-
   public item:any;
   public obj:any;
   public opcion:any;
-  public option='OPTION';
->>>>>>> 79369c144a96e90708ebd004b46674333026a5d7
 
   
   constructor(private proService: ProductosService ) { }
@@ -26,20 +21,11 @@ export class ProductosComponent implements OnInit {
     this.proService.getProductos()
     .subscribe( (data) =>{
       this.productos=data;
-      console.log(data);
-    }, (error)=>{
+      console.log(data) ;
+    }, (error) =>{
       console.log(error)
-<<<<<<< HEAD
-    } 
-=======
-      
     }
-
-    
->>>>>>> 79369c144a96e90708ebd004b46674333026a5d7
-    )
+    );
   }
-
-  
-
 }
+
