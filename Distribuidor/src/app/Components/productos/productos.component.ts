@@ -9,7 +9,7 @@ import { ProductosService } from '../../Services/productos.service';
 export class ProductosComponent implements OnInit {
 
   public productos: any=[];
-  public option='OPTION';
+  public option: any;
 
   constructor(private proService: ProductosService ) { }
 
@@ -20,9 +20,7 @@ export class ProductosComponent implements OnInit {
       console.log(data);
     }, (error)=>{
       console.log(error)
-    }
-
-    
+    } 
     )
   }
 
