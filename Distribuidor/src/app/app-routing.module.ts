@@ -4,7 +4,9 @@ import { BodegasComponent } from './Components/bodegas/bodegas.component';
 import { CategoriasComponent } from './Components/categorias/categorias.component';
 import { ProductosComponent } from './Components/productos/productos.component';
 import { HomeComponent } from './Components/home/home.component';
+import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import { Page404Component } from './Components/page404/page404.component';
+
 
 
 const routes: Routes = [
@@ -13,6 +15,7 @@ const routes: Routes = [
 {path:'Bodegas', component:BodegasComponent},
 {path:'Categorias', component:CategoriasComponent},
 {path:'Productos', component:ProductosComponent},
+{path:'Usuarios', component:UsuariosComponent},
 {path:'**', component:Page404Component}
 ];
 
