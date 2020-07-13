@@ -34,6 +34,6 @@ export class UsuariosComponent implements OnInit {
   }
 
   gotoContactosList() {
-    this.router.navigate(['/listarContactos']);
+    this.router.navigate(['/InicioSesion']);
   }
 }

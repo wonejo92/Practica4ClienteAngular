@@ -5,6 +5,7 @@ import { CategoriasComponent } from './Components/categorias/categorias.componen
 import { ProductosComponent } from './Components/productos/productos.component';
 import { HomeComponent } from './Components/home/home.component';
 import { UsuariosComponent } from './Components/usuarios/usuarios.component';
+import {  InicioSesionComponent} from './Components/inicio-sesion/inicio-sesion.component';
 import { Page404Component } from './Components/page404/page404.component';
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path:'Categorias', component:CategoriasComponent},
 {path:'Productos', component:ProductosComponent},
 {path:'Usuarios', component:UsuariosComponent},
+{path:'InicioSesion', component:InicioSesionComponent},
 {path:'**', component:Page404Component}
 ];
 

@@ -14,6 +14,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import { Page404Component } from './Components/page404/page404.component';
 import { PersonaService } from './Services/persona.service';
+import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PersonaService } from './Services/persona.service';
     BodegasComponent,
     HomeComponent,
     UsuariosComponent,
-    Page404Component
+    Page404Component,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
