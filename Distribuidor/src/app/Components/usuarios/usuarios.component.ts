@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,12 +19,12 @@ export class UsuariosComponent implements OnInit {
   contrasena : new FormControl('')
   });
   
-  constructor() { }
-
+  constructor(protected http: HttpClient) { }
+ 
   ngOnInit(): void {
   }
   
   guardarDatos() {
-   
+    return this.http.get('https://localhost:8080/');
   }
 }
