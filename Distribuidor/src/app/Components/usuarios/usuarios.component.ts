@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { FormGroup} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-
+import { PersonaService } from '../../Services/persona.service';
+import {Router} from '@angular/router';
+import {Usuario} from 'src/app/Modelo/persona';
 
 @Component({
   selector: 'app-usuarios',
@@ -10,21 +9,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  profileForm = new FormGroup({
-  nombre : new FormControl(''),
-  apellido : new FormControl(''),
-  telefono : new FormControl(''),
-  cedula : new FormControl(''),
-  correo : new FormControl(''),
-  contrasena : new FormControl('')
-  });
-  
-  constructor(protected http: HttpClient) { }
+ 
+  personas:Usuario[];
+  constructor(private service:PersonaService ,private router:Router) { }
  
   ngOnInit(): void {
+    
   }
   
-  guardarDatos() {
-    return this.http.get('https://localhost:8080/');
+  guardarDatos(persona:Usuario) {
+   this.service.createUsuario(persona)
+   .subscribe(data=>{
+     alert("se agrego");
+   })
   }
 }

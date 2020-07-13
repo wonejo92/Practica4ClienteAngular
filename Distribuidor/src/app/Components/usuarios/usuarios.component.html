@@ -10,41 +10,41 @@
 
 <h1>Creacion de cuenta</h1>
 
-<form [formGroup]="profileForm" (ngSubmit)="guardarDatos()"  class="form-group text-center">
+<form  class="form-group text-center">
 
 <label  class="form-group text-center">
     Nombre:
-    <input type="text" formControlName="nombre" class="form-group" required>
+    <input type="text"  class="form-group" required>
 </label>
 
 <label>
     Apellido:
-    <input type="text" formControlName="apellido" required>
+    <input type="text"  required>
 </label>
 
 <label>
     Telefono:
-    <input type="text" formControlName="telefono" required>
+    <input type="text" required>
 </label>
 
 <label>
     Cedula:
-    <input type="text" formControlName="cedula" required>
+    <input type="text" required>
 </label>
 
 <label>
     Correo:
-    <input type="text" formControlName="correo" required>
+    <input type="text"  required>
 </label>
 
 <label>
     Contraseña:
-    <input type="text" formControlName="contrasena" required>
+    <input type="text"  required>
 </label>
-
+<button (click)="guardarDatos()"> Guardar</button>
 </form>
 
-<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
 
 </body>
 </html>
