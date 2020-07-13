@@ -6,11 +6,14 @@ import { Usuario } from '../Modelo/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-
+  private url: string;
   usuario:Usuario
-  constructor(private http:HttpClient) { }
+  
+  constructor(private http:HttpClient) { 
+    this.url='http://localhost:8080/Distribuidor/rest/personas';
+  }
 
-  url='http://localhost:8080/Distribuidor/rest/personas';
+  
 
   createUsuario(usuario:Usuario){
     return this.http.post<Usuario>(this.url,usuario);

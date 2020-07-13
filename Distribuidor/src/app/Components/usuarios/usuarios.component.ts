@@ -9,18 +9,31 @@ import {Usuario} from 'src/app/Modelo/persona';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
- 
-  personas:Usuario[];
-  constructor(private service:PersonaService ,private router:Router) { }
- 
-  ngOnInit(): void {
-    
+
+  usuario:Usuario;
+
+  constructor(private service:PersonaService ,private router:Router) { 
+    this.usuario=new Usuario();
   }
   
-  guardarDatos(persona:Usuario) {
-   this.service.createUsuario(persona)
+
+  ngOnInit(): void {
+   
+  }
+  
+  guardarDatos(usuario:Usuario) {
+   this.service.createUsuario(usuario)
    .subscribe(data=>{
      alert("se agrego");
    })
+  }
+
+  guardar(){
+    alert('Guardando')
+    this.service.createUsuario(this.usuario).subscribe(result => this.gotoContactosList);
+  }
+
+  gotoContactosList() {
+    this.router.navigate(['/listarContactos']);
   }
 }

@@ -5,5 +5,5 @@ export class Usuario{
     telefono:string;
     cedula:string;
     correo:string;
-    contraseña:string;
+    contrasena:string;
 }
