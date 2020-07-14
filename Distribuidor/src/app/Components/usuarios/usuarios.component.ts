@@ -10,7 +10,6 @@ import {Usuario} from 'src/app/Modelo/persona';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-
   usuario :Usuario
 
   @Input() UsuarioDetails = {
@@ -20,17 +19,28 @@ export class UsuariosComponent implements OnInit {
 
   constructor(
     public dataService: PersonaService,
-    public router: Router
-  ) { }
+    public router: Router,
+  ) { 
 
+   
+  }
+
+    
   ngOnInit(): void {
    
   }
+<<<<<<< HEAD
   //Meotodo para agregar Usuarios.
+=======
+
+
+>>>>>>> c15dced814dcd5fd2e1d8b79e884d650d41ef7de
   add(dataBill) {
-    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
-      console.log('creado' ,data);
-    });
+    this.dataService.createUsuario(this.UsuarioDetails).subscribe((data: {}) => {
+      this.router.navigate(['/InicioSesion'])
+    })
   }
+
+ 
 
 }
