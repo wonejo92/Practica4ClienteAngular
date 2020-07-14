@@ -26,7 +26,7 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
    
   }
-
+  //Meotodo para agregar Usuarios.
   add(dataBill) {
     this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
       console.log('creado' ,data);
