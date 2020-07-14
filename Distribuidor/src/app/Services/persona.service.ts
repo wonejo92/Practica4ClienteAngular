@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../Modelo/persona';
 import { Observable } from 'rxjs';
 
@@ -8,16 +8,26 @@ import { Observable } from 'rxjs';
 })
 export class PersonaService {
   private url: string;
-  usuario:Usuario
+ 
   
   constructor(private http:HttpClient) { 
-    this.url='http://localhost:8080/Distribuidor/rest/prueba/personas';
+    this.url='/Distribuidor/rest/prueba/personas';
+    
     
   }
   
   
    
   createUsuario(usuario:Usuario) :Observable<Usuario>{
+    /*
+    let json =JSON.stringify(this.usuario);
+    let params="json" +json;
+    let headers=new HttpHeaders().set('Content-Type','applicacion/x-www-form-urlencoded');
+    headers.append('Access-Control-Allow-Headers', 'Content-Type');
+    headers.append('Access-Control-Allow-Methods', 'POST');
+    headers.append('Access-Control-Allow-Origin', '*');
+    */
+    console.log(usuario);
     return this.http.post<Usuario>(this.url,usuario);
   }
   
