@@ -41,6 +41,7 @@ export class UsuariosComponent implements OnInit {
    
   }
 
+<<<<<<< HEAD
   add() {
     console.log(this.form.value);
     var formData: any = new FormData();
@@ -53,6 +54,12 @@ export class UsuariosComponent implements OnInit {
     this.http.post('/Distribuidor/rest/prueba/personas',formData).subscribe(data  => {
     console.log('creado' ,data);
     })
+=======
+  add(dataBill) {
+    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
+      console.log('creado' ,data);
+    });
+>>>>>>> 46cfaec3538ad1c8897e32ba3fccd3ccbda06f80
   }
 
 }
