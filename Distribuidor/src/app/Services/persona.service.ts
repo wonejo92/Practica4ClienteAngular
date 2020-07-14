@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Usuario } from '../Modelo/persona';
 import { Observable } from 'rxjs';
 
@@ -13,22 +13,29 @@ export class PersonaService {
   constructor(private http:HttpClient) { 
     this.url='/Distribuidor/rest/prueba/personas';
     
-    
   }
   
-  
-   
-  createUsuario(usuario:Usuario) :Observable<Usuario>{
-    /*
-    let json =JSON.stringify(this.usuario);
-    let params="json" +json;
-    let headers=new HttpHeaders().set('Content-Type','applicacion/x-www-form-urlencoded');
-    headers.append('Access-Control-Allow-Headers', 'Content-Type');
-    headers.append('Access-Control-Allow-Methods', 'POST');
-    headers.append('Access-Control-Allow-Origin', '*');
-    */
+  createUsuario(usuario:Usuario){
+
     console.log(usuario);
-    return this.http.post<Usuario>(this.url,usuario);
+
+    const body = new HttpParams()
+    .set('nombres', usuario.nombres)
+    .set('apellidos', usuario.apellidos)
+    .set('telefono', usuario.telefono)
+    .set('cedula',usuario.cedula)
+    .set('correo',usuario.correo)
+    .set('contrasena',usuario.contrasena);
+
+    return this.http.post(
+      this.url,
+      body.toString(),
+      {
+        headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
+        responseType: 'text'
+      }
+    );
+    //return this.http.post<Usuario>(this.url,usuario);
   }
   
   

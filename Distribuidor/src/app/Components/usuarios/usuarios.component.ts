@@ -28,16 +28,9 @@ export class UsuariosComponent implements OnInit {
   }
 
   add(dataBill) {
-    return this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
-      console.log(this.UsuarioDetails.nombres);
-      console.log(this.UsuarioDetails.apellidos);
-      console.log(this.UsuarioDetails.cedula);
-      console.log(this.UsuarioDetails.telefono);
-      console.log(this.UsuarioDetails.correo);
-      console.log(this.UsuarioDetails.contrasena);
-      console.log(this.UsuarioDetails)
+    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
       console.log('creado' ,data);
-    })
+    });
   }
 
 }
