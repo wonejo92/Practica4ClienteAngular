@@ -15,6 +15,7 @@ import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import { Page404Component } from './Components/page404/page404.component';
 import { PersonaService } from './Services/persona.service';
 import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.component';
+import { BodegasService } from './Services/bodegas.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ProductosService,PersonaService],
+  providers: [ProductosService,PersonaService,BodegasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

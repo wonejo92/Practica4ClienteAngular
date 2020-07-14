@@ -17,9 +17,15 @@
     <hr>
     <div *ngFor='let bodega of bodegas'>
         <h2>{{bodega.nombre}}</h2>
+        <a [routerLink]="['/Categorias/',bodega.nombre]"> Go Categorias</a>
     </div>
 
+    <div>
+        <input type="text" name="nombre" id="">
 
+        <button (click)="boo('Hola')">Enviar</button>
+
+    </div>
 </body>
 
 </html>

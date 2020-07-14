@@ -8,6 +8,6 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
   getCategorias(){
-    return this.http.get("http://localhost:8080/Distribuidor/rest/prueba/Categorias");
+    return this.http.get("http://localhost:8282/Distribuidor/rest/prueba/Categorias");
   }
 }
