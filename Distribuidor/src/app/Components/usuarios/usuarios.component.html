@@ -14,7 +14,7 @@
 
 
 
-<form  class="form-group text-center" (ngSubmit)="guardar()" #userForm="ngForm" >
+<form  class="form-group text-center" (ngSubmit)="add(UsuarioDetails)" #userForm="ngForm" >
     <div class="form-group">
         <h1>Creacion de cuenta</h1>
     </div>
@@ -22,50 +22,47 @@
 <div class="form-group">
 <label  class="form-group text-center">
     Nombre:
-    <input [(ngModel)]="usuario.nombres" class="form-control" type="text"   required>
+    <input [(ngModel)]="UsuarioDetails.nombres" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Apellido:
-    <input [(ngModel)]="usuario.apellidos" class="form-control" type="text"  required>
+    <input [(ngModel)]="UsuarioDetails.apellidos" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Telefono:
-    <input [(ngModel)]="usuario.telefono" class="form-control" type="text" required>
+    <input [(ngModel)]="UsuarioDetails.telefono" class="form-control" type="text" [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Cedula:
-    <input [(ngModel)]="usuario.cedula" class="form-control" type="text" required>
+    <input [(ngModel)]="UsuarioDetails.cedula" class="form-control" type="text" [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Correo:
-    <input [(ngModel)]="usuario.correo" class="form-control" type="text"  required>
+    <input [(ngModel)]="UsuarioDetails.correo" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Contraseña:
-    <input [(ngModel)]="usuario.contrasena" class="form-control" type="text"  required>
+    <input [(ngModel)]="UsuarioDetails.contrasena" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
-<button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info btn-block" > Guardar</button>
+<button   type="submit" [disabled]="!userForm.form.valid" class="btn btn-info btn-block" > Guardar</button>
 </form>
-
-
-
 </body>
 </html>
 

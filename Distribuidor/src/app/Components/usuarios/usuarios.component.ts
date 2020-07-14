@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { PersonaService } from '../../Services/persona.service';
 import {Router} from '@angular/router';
 import {Usuario} from 'src/app/Modelo/persona';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -10,30 +11,26 @@ import {Usuario} from 'src/app/Modelo/persona';
 })
 export class UsuariosComponent implements OnInit {
 
-  usuario:Usuario;
+  usuario :Usuario[]
 
-  constructor(private service:PersonaService ,private router:Router) { 
-    this.usuario=new Usuario();
+  @Input() UsuarioDetails = {
+    nombres: '', apellidos: '', telefono: '', cedula: '',
+    correo:'', contrasena:''
   }
-  
+
+  constructor(
+    public dataService: PersonaService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
    
   }
-  
-  guardarDatos(usuario:Usuario) {
-   this.service.createUsuario(usuario)
-   .subscribe(data=>{
-     alert("se agrego");
-   })
+
+  add(dataBill) {
+    return this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
+      console.log('creado' ,data);
+    })
   }
 
-  guardar(){
-    alert('Guardando')
-    this.service.createUsuario(this.usuario).subscribe(result => this.gotoContactosList);
-  }
-
-  gotoContactosList() {
-    this.router.navigate(['/InicioSesion']);
-  }
 }

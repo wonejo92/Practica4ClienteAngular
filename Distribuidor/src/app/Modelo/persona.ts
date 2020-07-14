@@ -1,9 +1,9 @@
 export class Usuario{
-    id:number;
-    nombres:string;
-    apellidos:string;
-    telefono:string;
-    cedula:string;
-    correo:string;
-    contrasena:string;
+    public id?:number;
+    public nombres?:string;
+    public apellidos?:string;
+    public telefono?:string;
+    public cedula?:string;
+    public correo?:string;
+    public contrasena?:string
 }
