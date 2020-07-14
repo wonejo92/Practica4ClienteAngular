@@ -15,11 +15,8 @@ export class PersonaService {
     
   }
   
-<<<<<<< HEAD
-  createUsuario(usuario:Usuario) :Observable<Usuario>{
-    console.log(usuario)
-    return this.http.post<Usuario>(this.url,usuario);
-=======
+
+  
   createUsuario(usuario:Usuario){
 
     console.log(usuario);
@@ -41,7 +38,7 @@ export class PersonaService {
       }
     );
     //return this.http.post<Usuario>(this.url,usuario);
->>>>>>> 46cfaec3538ad1c8897e32ba3fccd3ccbda06f80
+
   }
   
   

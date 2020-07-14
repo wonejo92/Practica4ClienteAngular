@@ -2,7 +2,6 @@ import { Component, OnInit,Input } from '@angular/core';
 import { PersonaService } from '../../Services/persona.service';
 import {Router} from '@angular/router';
 import {Usuario} from 'src/app/Modelo/persona';
-import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  form: FormGroup;
   usuario :Usuario
 
   @Input() UsuarioDetails = {
@@ -22,18 +20,9 @@ export class UsuariosComponent implements OnInit {
   constructor(
     public dataService: PersonaService,
     public router: Router,
-    public fb: FormBuilder,
-    private http: HttpClient
   ) { 
 
-    this.form = this.fb.group({
-      nombres: [''],
-      apellidos: [''],
-      telefono:[''],
-      cedula:[''],
-      correo:[''],
-      contrasena:['']
-    })
+   
   }
 
     
