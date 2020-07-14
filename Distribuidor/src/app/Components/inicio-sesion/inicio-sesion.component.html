@@ -1,4 +1,3 @@
-<p>inicio-sesion works!</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +13,19 @@
     
 <form  class="form-group text-center" (ngSubmit)="addInicio(InicioDetails)" #userForm="ngForm" >
     <div class="form-group">
-        <h1>Creacion de cuenta</h1>
+        <h1>Inicio Sesion</h1>
     </div>
 
 <div class="form-group">
 <label  class="form-group text-center">
-    Nombre:
+    Correo:
     <input [(ngModel)]="InicioDetails.correo" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
-    Apellido:
+    Contraseña:
     <input [(ngModel)]="InicioDetails.contrasena" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
 </label>
 </div>
