@@ -29,12 +29,9 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
    
   }
-<<<<<<< HEAD
   //Meotodo para agregar Usuarios.
-=======
 
 
->>>>>>> c15dced814dcd5fd2e1d8b79e884d650d41ef7de
   add(dataBill) {
     this.dataService.createUsuario(this.UsuarioDetails).subscribe((data: {}) => {
       this.router.navigate(['/InicioSesion'])
