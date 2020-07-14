@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { BodegasService } from '../../Services/bodegas.service';
 import { Bodega } from '../../Modelo/Bodegas';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bodegas',
@@ -12,9 +13,11 @@ export class BodegasComponent implements OnInit {
 
   public bodegas: any=[]
   public bode:Bodega;
- //public nombre:String;
 
-  constructor(private BodService: BodegasService) { }
+
+  constructor(private BodService: BodegasService) {
+  
+   }
 
   ngOnInit(): void {
     this.BodService.getBodegas()
@@ -28,15 +31,7 @@ export class BodegasComponent implements OnInit {
 
 
   }
-  boo(nombre:any){
-     this.BodService.getBodegaNombre(nombre)
-     .subscribe( (data) =>{
-      nombre=data;
-      console.log("Holaaaaaaaaaaaaaaaa")
-      console.log(data) ;
-    }, (error) =>{
-      console.log(error)
-    }
-    );    
-  }
+  param(){
+   
+  } 
 }

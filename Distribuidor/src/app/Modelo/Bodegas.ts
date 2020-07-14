@@ -1,3 +1,3 @@
 export class Bodega{
-    nombre:String;
+    nombre:string;
 }

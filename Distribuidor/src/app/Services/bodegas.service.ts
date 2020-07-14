@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 import { BodegasComponent } from '../Components/bodegas/bodegas.component';
-import { Observable } from 'rxjs';
+import { Bodega } from '../Modelo/Bodegas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BodegasService {
-
-  constructor(private http: HttpClient) { }
-  getBodegas():Observable<any>{
-    return this.http.get<any>("/Distribuidor/rest/prueba/Bodegas");
+  private url: string;
+  constructor(private http: HttpClient) { 
+    this.url='/Distribuidor/rest/prueba/ProductosByBodega/';
   }
-  getBodegaNombre(nombre:String){
-return this.http.post<any>("/Distribuidor/rest/prueba/bode/",nombre)
+  getBodegas(){
+    return this.http.get("/Distribuidor/rest/prueba/Bodegas");
   }
+  getBodegaNombre(nombre:string){
+   // const body=new HttpParams()
+     // .set('nombre',bode.nombre);
+     return this.http.post(this.url,nombre,
+     {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
+      responseType: 'text'
+    }
+  );
 }
+  
+}  
+
