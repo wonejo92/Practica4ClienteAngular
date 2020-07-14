@@ -41,25 +41,12 @@ export class UsuariosComponent implements OnInit {
    
   }
 
-<<<<<<< HEAD
-  add() {
-    console.log(this.form.value);
-    var formData: any = new FormData();
-    formData.append("nombres", this.form.get('nombres').value);
-    formData.append("apellidos", this.form.get('apellidos').value);
-    formData.append("telefono", this.form.get('telefono').value);
-    formData.append("cedula", this.form.get('cedula').value);
-    formData.append("correo", this.form.get('correo').value);
-    formData.append("contrasena", this.form.get('contrasena').value);
-    this.http.post('/Distribuidor/rest/prueba/personas',formData).subscribe(data  => {
-    console.log('creado' ,data);
-    })
-=======
+
   add(dataBill) {
     this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
       console.log('creado' ,data);
     });
->>>>>>> 46cfaec3538ad1c8897e32ba3fccd3ccbda06f80
+
   }
 
 }
