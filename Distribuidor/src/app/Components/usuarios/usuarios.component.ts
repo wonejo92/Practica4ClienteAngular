@@ -2,7 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { PersonaService } from '../../Services/persona.service';
 import {Router} from '@angular/router';
 import {Usuario} from 'src/app/Modelo/persona';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -32,10 +32,11 @@ export class UsuariosComponent implements OnInit {
 
 
   add(dataBill) {
-    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data  => {
-      console.log('creado' ,data);
-    });
+    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data => this.GoInisioSesion);
+  }
 
+  GoInisioSesion() {
+    this.router.navigate(['/InicioSesion']);
   }
 
 }
