@@ -32,11 +32,11 @@ export class UsuariosComponent implements OnInit {
 
 
   add(dataBill) {
-    this.dataService.createUsuario(this.UsuarioDetails).subscribe(data => this.GoInisioSesion);
+    this.dataService.createUsuario(this.UsuarioDetails).subscribe((data: {}) => {
+      this.router.navigate(['/InicioSesion'])
+    })
   }
 
-  GoInisioSesion() {
-    this.router.navigate(['/InicioSesion']);
-  }
+ 
 
 }
