@@ -14,15 +14,19 @@ export class ProductosComponent implements OnInit {
   public item:any;
   public obj:any;
   public opcion:any;
-   nombre:string;
-   categoria:string;
+   public nombre:string;
+  public categoria:string;
   
   constructor(private proService: ProductosService,private actRoute:ActivatedRoute ) { 
-    this.nombre=actRoute.snapshot.params.nombre;
-    this.categoria=actRoute.snapshot.params.categoria;
+   // this.nombre=actRoute.snapshot.params.nombre;
+   // this.categoria=actRoute.snapshot.params.categoria;
+    this.produc();
+    console.log(this.nombre);
+    console.log(this.categoria);
   }
 
   ngOnInit(): void {
+    /*
     this.proService.getProductos()
     .subscribe( (data) =>{
       this.productos=data;
@@ -30,7 +34,23 @@ export class ProductosComponent implements OnInit {
     }, (error) =>{
       console.log(error)
     }
-    );
+    );*/
   }
+ 
+
+  produc(){
+    this.nombre=this.actRoute.snapshot.params.nombre; 
+    this.categoria=this.actRoute.snapshot.params.categoria;  
+    console.log(this.nombre)
+    console.log(this.categoria)
+    this.proService.getBodegaNombreCategoria(this.nombre,this.categoria)
+    .subscribe((data)=>{
+      console.log(data)
+      this.productos=data;
+      console.log('Hola putitos')
+      console.log(this.productos)
+
+    });
+}
 }
 
