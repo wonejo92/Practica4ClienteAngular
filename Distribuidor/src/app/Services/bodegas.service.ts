@@ -17,10 +17,12 @@ export class BodegasService {
   getBodegaNombre(nombre:string){
    // const body=new HttpParams()
      // .set('nombre',bode.nombre);
-     return this.http.post(this.url,nombre,
+     console.log(nombre)
+     return this.http.post(this.url+nombre,
      {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
       responseType: 'text'
+      
     }
   );
 }

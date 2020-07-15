@@ -14,6 +14,8 @@ export class CategoriasComponent implements OnInit {
  public nombre:string;
 
   public categorias: any=[];
+  public productos: any=[];
+  
   constructor(private CatServise: CategoriasService,private actRoute:ActivatedRoute,private BodService: BodegasService) {
     this.produc();
    }
@@ -31,10 +33,11 @@ export class CategoriasComponent implements OnInit {
 
   produc(){
     this.nombre=this.actRoute.snapshot.params.nombre;   
-    console.log("ljdgnk")
     console.log(this.nombre)
     this.BodService.getBodegaNombre(this.nombre).subscribe(data=>{
       console.log("Consume")
+      this.productos=data;
+      console.log(this.productos)
 
     });
   }

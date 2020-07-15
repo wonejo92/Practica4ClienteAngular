@@ -5,9 +5,10 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoriasService {
+  public productos: any=[];
 
   constructor(private http: HttpClient) { }
   getCategorias(){
-    return this.http.get("http://localhost:8282/Distribuidor/rest/prueba/Categorias");
+    return this.http.get("/Distribuidor/rest/prueba/Categorias");
   }
 }

@@ -1,7 +1,39 @@
-<p>categorias works!</p>
-<hr>
-<hr>
-<div *ngFor='let cat of categorias'>
-    <h2>{{cat.nombre}}</h2>
-    <p>{{cat.id}}</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <p>categorias works!</p>
+    <hr>
+
+    <div *ngFor='let cat of categorias'>
+        <h2>{{cat.nombre}}</h2>
+        <p>{{cat.id}}</p>
+    </div>
+
+    <hr>
+    <div *ngFor='let pro  of productos '>
+        <h2>{{pro.nombre}}</h2>
+        <p>{{pro.descripcion}}</p>
+        <p>{{pro.preciopublico}}</p>
+        <p>{{pro.preciounitario}}</p>
+        <p>{{pro.stock}}</p>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
