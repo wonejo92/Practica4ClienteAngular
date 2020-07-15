@@ -17,7 +17,9 @@ export class CategoriasComponent implements OnInit {
   public productos: any=[];
   
   constructor(private CatServise: CategoriasService,private actRoute:ActivatedRoute,private BodService: BodegasService) {
-    this.produc();
+   // this.produc();
+   this.nombre=actRoute.snapshot.params.nombre;
+   console.log(this.nombre)
    }
 
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class CategoriasComponent implements OnInit {
     );
   }
 
-  produc(){
+  /*produc(){
     this.nombre=this.actRoute.snapshot.params.nombre;   
     console.log(this.nombre)
     this.BodService.getBodegaNombre(this.nombre).subscribe(data=>{
@@ -40,6 +42,6 @@ export class CategoriasComponent implements OnInit {
       console.log(this.productos)
 
     });
-  }
+  }*/
 
 }

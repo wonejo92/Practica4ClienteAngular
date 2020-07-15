@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../Services/productos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -13,9 +14,13 @@ export class ProductosComponent implements OnInit {
   public item:any;
   public obj:any;
   public opcion:any;
-
+   nombre:string;
+   categoria:string;
   
-  constructor(private proService: ProductosService ) { }
+  constructor(private proService: ProductosService,private actRoute:ActivatedRoute ) { 
+    this.nombre=actRoute.snapshot.params.nombre;
+    this.categoria=actRoute.snapshot.params.categoria;
+  }
 
   ngOnInit(): void {
     this.proService.getProductos()

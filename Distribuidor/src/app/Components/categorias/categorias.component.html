@@ -16,7 +16,7 @@
 
     <div *ngFor='let cat of categorias'>
         <h2>{{cat.nombre}}</h2>
-        <p>{{cat.id}}</p>
+        <a [routerLink]="['/Productos/',nombre,cat.nombre]"> Go Categorias</a>
     </div>
 
     <hr>
@@ -26,6 +26,7 @@
         <p>{{pro.preciopublico}}</p>
         <p>{{pro.preciounitario}}</p>
         <p>{{pro.stock}}</p>
+
     </div>
 
 
