@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../Services/productos.service';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
+import { Producto } from '../../Modelo/Producto';
 
 @Component({
   selector: 'app-productos',
@@ -14,8 +16,15 @@ export class ProductosComponent implements OnInit {
   public item:any;
   public obj:any;
   public opcion:any;
-   public nombre:string;
+  public nombre:string;
   public categoria:string;
+
+  //Variables para la cnatidad de productos
+  public cantidad:number;
+  public productosFactura: any=[];
+  public router: Router;
+
+  public ObjProductos: any=[];
   
   constructor(private proService: ProductosService,private actRoute:ActivatedRoute ) { 
    // this.nombre=actRoute.snapshot.params.nombre;
@@ -52,5 +61,78 @@ export class ProductosComponent implements OnInit {
 
     });
 }
+addProductos(nombre,descripcion,preciopublico,preciounitario,stock,cantidad){
+  console.log('Producto---->: ' ,nombre)
+  console.log('Descripcion---->: ' ,descripcion)
+  console.log('preciopublico--->',preciopublico)
+  console.log('preciounitario--->',preciounitario)
+  console.log('Cantidad----->',cantidad)
+  console.log('Stock----->',stock);
+
+ //let  producto= new Producto()
+ let producto=<Producto>{};
+ producto.nombre=nombre;
+ producto.descripcion=descripcion;
+ producto.preciopublico=preciopublico;
+ producto.preciounitario=preciounitario;
+ producto.stock=stock;
+
+
+ this.productosFactura=(producto)
+
+
+ console.log('OBJETO PRODUCTO--->',producto)
+ console.log("lista de PRODUCTOS-----***>",this.productosFactura)
+ console.log('Cantidad',cantidad  )
+
+ this.proService.AddProductosCarito(producto,cantidad)
+ .subscribe( (data) =>{
+  //this.pro=data;
+  console.log(data) ;
+}, (error) =>{
+  console.log(error)
+}
+);
+}
+
+addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,cantidad){
+  console.log('Producto---->: ' ,nombre)
+  console.log('Descripcion---->: ' ,descripcion)
+  console.log('preciopublico--->',preciopublico)
+  console.log('preciounitario--->',preciounitario)
+  console.log('Cantidad----->',cantidad)
+  console.log('Stock----->',stock);
+
+ //let  producto= new Producto()
+ let producto=<Producto>{};
+ producto.nombre=nombre;
+ producto.descripcion=descripcion;
+ producto.preciopublico=preciopublico;
+ producto.preciounitario=preciounitario;
+ producto.stock=stock;
+ producto.cantidad=cantidad;
+  
+ 
+ if(localStorage.getItem('ListProducts')){
+   
+  this.ObjProductos=JSON.parse(localStorage.getItem('ListProducts'));
+
+  this.ObjProductos=[producto,...this.ObjProductos];
+ }else{
+  this.ObjProductos=[producto];
+ }
+ localStorage.setItem('ListProducts', JSON.stringify(this.ObjProductos));
+
+ this.proService.AddProductosCarito2(this.ObjProductos)
+ .subscribe( (data) =>{
+  //this.pro=data;
+  console.log(data) ;
+}, (error) =>{
+  console.log(error)
+}
+);
+
+}
+
 }
 

@@ -18,12 +18,26 @@
     <hr>
     <div *ngFor='let producto of productos'>
 
-        <label>Descripcion</label>
+        <label>Productos</label>
         <p>{{producto.stock}}</p>
         <p>{{productos[0].id }}</p>
+        <p>{{productos[0].producto.nombre}}</p>
         <p>{{productos[0].producto.descripcion}}</p>
         <p>{{productos[0].producto.preciopublico}}</p>
         <p>{{productos[0].producto.preciounitario}}</p>
+        <label>STOCK</label>
+        <p>{{productos[0].producto.stock}}</p>
+        <h2>Cantidad {{cantidad}}</h2>
+        <input type='text' [(ngModel)]="cantidad">
+        <button (click)="addProductos(productos[0].producto.nombre,
+        productos[0].producto.descripcion,productos[0].producto.preciopublico,
+        productos[0].producto.preciounitario,productos[0].producto.stock,cantidad)" class="btn btn-primary" type="submit">Order</button>
+
+        <!--Boton para agregar productos-->
+        <input type='text' [(ngModel)]="cantidad">
+        <button (click)="addProductoLocalStorange(productos[0].producto.nombre,
+        productos[0].producto.descripcion,productos[0].producto.preciopublico,
+        productos[0].producto.preciounitario,productos[0].producto.stock,cantidad)" class="btn btn-primary" type="submit">AddProducts</button>
 
 
         <!-- <label>Nombre:</label>
