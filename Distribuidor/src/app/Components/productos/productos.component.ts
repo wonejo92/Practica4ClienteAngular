@@ -72,10 +72,10 @@ addProductos(nombre,descripcion,preciopublico,preciounitario,stock,cantidad){
 
  //let  producto= new Producto()
  let producto=<Producto>{};
- producto.nombre=nombre;
+ producto.nombre1=nombre;
  producto.descripcion=descripcion;
- producto.preciopublico=preciopublico;
- producto.preciounitario=preciounitario;
+ producto.ppu=preciopublico;
+ producto.pun=preciounitario;
  producto.cantidad=cantidad;
  producto.stock=stock;
 
@@ -106,10 +106,10 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
 
  //let  producto= new Producto()
  let producto=<Producto>{};
- producto.nombre=nombre;
+ producto.nombre1=nombre;
  producto.descripcion=descripcion;
- producto.preciopublico=preciopublico;
- producto.preciounitario=preciounitario;
+ producto.ppu=preciopublico;
+ producto.pun=preciounitario;
  producto.cantidad=cantidad;
  producto.stock=stock;
  
@@ -136,7 +136,6 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
  this.proService.AddProductosCarito2(this.ObjProductos)
  .subscribe( (data) =>{
   //this.pro=data;
- console.log('producto tipo JSON', this.produ)
   console.log(data) ;
 }, (error) =>{
   console.log(error)

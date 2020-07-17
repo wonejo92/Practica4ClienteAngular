@@ -43,9 +43,9 @@ export class ProductosService {
     //console.log('CAntidad--->',cantidad)
     //console.log(nombre)
     const body = new HttpParams()
-    .set('nombre',producto.nombre)
+    .set('nombre',producto.nombre1)
     .set('descripcion',producto.descripcion)
-    .set('preciopublico',producto.preciopublico)
+    .set('preciopublico',producto.ppu)
     .set('stock',producto.stock)
     
 
@@ -58,7 +58,6 @@ export class ProductosService {
     )
   }
   AddProductosCarito2(listaproductos:any){
-
     console.log('Estoy n el pinche servcio',listaproductos)
     console.log('llega informacion al servicio')
     console.log('Lista de productos',listaproductos)
