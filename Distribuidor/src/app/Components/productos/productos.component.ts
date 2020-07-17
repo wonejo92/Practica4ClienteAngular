@@ -18,9 +18,10 @@ export class ProductosComponent implements OnInit {
   public opcion:any;
   public nombre:string;
   public categoria:string;
+  public produ: any=[];
 
   //Variables para la cnatidad de productos
-  public cantidad:number;
+  public cantidad:string;
   public productosFactura: any=[];
   public router: Router;
 
@@ -75,6 +76,7 @@ addProductos(nombre,descripcion,preciopublico,preciounitario,stock,cantidad){
  producto.descripcion=descripcion;
  producto.preciopublico=preciopublico;
  producto.preciounitario=preciounitario;
+ producto.cantidad=cantidad;
  producto.stock=stock;
 
 
@@ -83,7 +85,7 @@ addProductos(nombre,descripcion,preciopublico,preciounitario,stock,cantidad){
 
  console.log('OBJETO PRODUCTO--->',producto)
  console.log("lista de PRODUCTOS-----***>",this.productosFactura)
- console.log('Cantidad',cantidad  )
+
 
  this.proService.AddProductosCarito(producto,cantidad)
  .subscribe( (data) =>{
@@ -100,7 +102,6 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
   console.log('Descripcion---->: ' ,descripcion)
   console.log('preciopublico--->',preciopublico)
   console.log('preciounitario--->',preciounitario)
-  console.log('Cantidad----->',cantidad)
   console.log('Stock----->',stock);
 
  //let  producto= new Producto()
@@ -109,10 +110,12 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
  producto.descripcion=descripcion;
  producto.preciopublico=preciopublico;
  producto.preciounitario=preciounitario;
- producto.stock=stock;
  producto.cantidad=cantidad;
+ producto.stock=stock;
+ 
   
  
+
  if(localStorage.getItem('ListProducts')){
    
   this.ObjProductos=JSON.parse(localStorage.getItem('ListProducts'));
@@ -123,9 +126,17 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
  }
  localStorage.setItem('ListProducts', JSON.stringify(this.ObjProductos));
 
+ this.produ =localStorage.getItem('ListProducts');
+
+ //JSON.stringify(produ)
+
+ console.log('Producto obtenido',this.produ)
+ console.log('Objeto Productos', this.ObjProductos)
+
  this.proService.AddProductosCarito2(this.ObjProductos)
  .subscribe( (data) =>{
   //this.pro=data;
+ console.log('producto tipo JSON', this.produ)
   console.log(data) ;
 }, (error) =>{
   console.log(error)
@@ -133,6 +144,19 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
 );
 
 }
+/*
+factura(){
 
+  this.proService.AddProductosCarito2(this.ObjProductos)
+  .subscribe( (data) =>{
+    //this.pro=data;
+   console.log('producto tipo JSON Factura', this.produ)
+    console.log(data) ;
+  }, (error) =>{
+    console.log(error)
+  }
+  );
+  */
+ 
 }
 

@@ -4,5 +4,7 @@ export class Producto{
     public preciopublico?:string;
     public preciounitario?:string;
     public stock?:string;
-    public cantidad?:string
+    public cantidad?:string;
 }
+
+

@@ -47,7 +47,7 @@ export class ProductosService {
     .set('descripcion',producto.descripcion)
     .set('preciopublico',producto.preciopublico)
     .set('stock',producto.stock)
-    .set('cantidad',cantidad)
+    
 
     console.log(producto)
     return this.http.post(
@@ -58,29 +58,34 @@ export class ProductosService {
     )
   }
   AddProductosCarito2(listaproductos:any){
+
+    console.log('Estoy n el pinche servcio',listaproductos)
     console.log('llega informacion al servicio')
     console.log('Lista de productos',listaproductos)
     //console.log('CAntidad--->',cantidad)
     //console.log(nombre)
-    let productosObtenidos: any=[];
-    productosObtenidos =JSON.parse(localStorage.getItem('ListProducts'));
-    console.log('llave productosObtenidos',productosObtenidos)
+    //let productosObtenidos: any=[];
+    //productosObtenidos =(localStorage.getItem('ListProducts'));
+    //console.log('llave productosObtenidos',productosObtenidos)
 
-    const body = new HttpParams()
-    .set('nombre',productosObtenidos[0].nombre)
-    .set('descripcion',productosObtenidos[0].descripcion)
-    .set('preciopublico',productosObtenidos[0].preciopublico)
-    .set('stock',productosObtenidos[0].stock)
-    .set('cantidad',productosObtenidos[0].cantidad)
+    //const body = new HttpParams()
+    
+    //.set('nombre',productosObtenidos[0].nombre)
+    //.set('descripcion',productosObtenidos[0].descripcion)
+    //.set('preciopublico',productosObtenidos[0].preciopublico)
+    //.set('stock',productosObtenidos[0].stock)
+    
 
     //console.log(producto)
     return this.http.post(
-      this.urlProductos,body.toString(),{
-        headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
+      this.urlProductos,listaproductos,{
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
         responseType: 'text'
       }
     )
   }
+
+  
 
 
 
