@@ -1,34 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { IniciosesionService } from '../../Services/iniciosesion.service';
 //import { InicioSesionComponent } from '../inicio-sesion/inicio-sesion.component';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-=======
-import {Router} from '@angular/router';
+//import {Router} from '@angular/router';
 
->>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-<<<<<<< HEAD
+
   public correop:any
   public coo:any
   constructor(public dataService: IniciosesionService,private actRoute:ActivatedRoute,  public router: Router) { 
     this.correop =actRoute.snapshot.params.correop;
   }
-=======
 
-  constructor(private router:Router) { }
->>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
+  //constructor(private router:Router) { }
 
   ngOnInit(): void {
    
   }
 
-<<<<<<< HEAD
+
   eliminar(){
    //this.correop= this.dataComponent.correop
    console.log(this.correop)
@@ -59,11 +55,11 @@ redi(){
     //console.log('redi')
     this.router.navigate(['/InicioSesion'])
 }
-=======
+
   mensaje(){
     console.log('FUNCIONA')
-    this.router.navigate(['CarritoCompras'])
+    this.router.navigate(['CarritoCompras/',this.correop])
   }
->>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
+
 
 }

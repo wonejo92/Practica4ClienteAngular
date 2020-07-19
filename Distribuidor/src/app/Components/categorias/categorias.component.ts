@@ -13,6 +13,7 @@ export class CategoriasComponent implements OnInit {
     nombre: ''
   }
  public nombre:string;
+ public correop: string;
 
   public categorias: any=[];
   public productos: any=[];
@@ -20,6 +21,7 @@ export class CategoriasComponent implements OnInit {
   constructor(private CatServise: CategoriasService,private actRoute:ActivatedRoute,private BodService: BodegasService,private router:Router) {
    //this.produc();
    this.nombre=actRoute.snapshot.params.nombre;
+   this.correop=actRoute.snapshot.params.correop;
    console.log(this.nombre)
    }
 
@@ -35,7 +37,7 @@ export class CategoriasComponent implements OnInit {
   }
   mensaje(){
     console.log('FUNCIONA')
-    this.router.navigate(['CarritoCompras'])
+    this.router.navigate(['CarritoCompras/',this.correop])
   }
 
  /* produc(){

@@ -13,10 +13,11 @@ export class BodegasComponent implements OnInit {
 
   public bodegas: any=[]
   public bode:Bodega;
+  public correoP:string;
 
 
-  constructor(private BodService: BodegasService,private router:Router) {
-  
+  constructor(private BodService: BodegasService,private router:Router,private actRoute:ActivatedRoute) {
+  this.correoP=actRoute.snapshot.params.correop;
    }
 
   ngOnInit(): void {
@@ -33,6 +34,6 @@ export class BodegasComponent implements OnInit {
   }
   mensaje(){
     console.log('FUNCIONA')
-    this.router.navigate(['CarritoCompras'])
+    this.router.navigate(['CarritoCompras/',this.correoP])
   }
 }

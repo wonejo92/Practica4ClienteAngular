@@ -4,6 +4,8 @@ import { element } from 'protractor';
 import { JsonPipe } from '@angular/common';
 import { Producto } from '../../Modelo/Producto';
 import { ProductosService } from '../../Services/productos.service';
+import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -19,8 +21,17 @@ export class CarritoComponent implements OnInit {
   public totalF:number=0;
   public totalIva :number=0;
   public Arreglo: any=[];
+  public correoP: string;
+  public subtotal: number=0;
 
-  constructor(private proService: ProductosService) {this.cargarProductos(),this.calcular() }
+  constructor(private proService: ProductosService,private actRoute:ActivatedRoute,public router: Router) {this.cargarProductos(),this.calcular() 
+    this.correoP=actRoute.snapshot.params.correop;
+  
+  
+  
+  
+  }
+  
 
   ngOnInit(): void {
   }
@@ -51,12 +62,14 @@ export class CarritoComponent implements OnInit {
     console.log('total2------------->',this.total2)
     for(let totales of this.total2){
       console.log(totales)
-      this.totalF=this.totalF+totales;
-      this.totalIva=(this.totalF*12/100);
+      this.subtotal=this.subtotal+totales;
+      this.totalIva=(this.subtotal*12/100);
     }
-    this.totalF=this.totalF+this.totalIva
+    //this.subtotal=this.totalF;
+    this.totalF=this.subtotal+this.totalIva
     console.log('valor a pagar con iva',this.totalIva)
     console.log('Valor total a pagar',this.totalF)
+    console.log('SUBTOTAL A PAGAR:',this.subtotal)
   }
 
 
@@ -73,6 +86,8 @@ export class CarritoComponent implements OnInit {
   }
 
   facturar(){
+    this.facturarTotal()
+
     this.Arreglo=JSON.parse(localStorage.getItem('ListProducts'));
 
     console.log(this.Arreglo)
@@ -81,20 +96,35 @@ export class CarritoComponent implements OnInit {
   .subscribe( (data) =>{
     //this.pro=data;
     console.log(data) ;
+    localStorage.removeItem('ListProducts');
+    
   }, (error) =>{
     console.log(error)
   }
   );
-
-
-
-
-
-
-
-
-
-
     console.log('Se procede a persistir en la BD',this.Arreglo)
+  }
+
+
+
+
+  facturarTotal(){
+    console.log(this.correoP)
+
+    console.log('Se pasa el totoal y la fecha',this.totalF)
+    let Totalfactura: string;
+    let SubtotalFactura :string;
+    Totalfactura=this.totalF.toString();
+    SubtotalFactura=this.subtotal.toString();
+    this.proService.facturarTotal(Totalfactura,this.correoP,SubtotalFactura)
+    .subscribe( (data) =>{
+      //this.pro=data;
+      console.log(data) ;
+      
+    }, (error) =>{
+      console.log(error)
+    }
+    );
+    this.router.navigate(['/Bodegas/',this.correoP])
   }
 }
