@@ -47,23 +47,28 @@ export class IniciosesionService {
     );
   }
 
-  actualizar(correop:any,usuario:Usuario){
-    
+  createUsuario(correop:string,usuario:Usuario){
+
+    console.log(usuario);
+
     const body = new HttpParams()
-    .set('nombres',usuario.nombres)
-    .set('apellidos',usuario.apellidos)
-    .set('telefono',usuario.telefono)
+    .set('nombres', usuario.nombres)
+    .set('apellidos', usuario.apellidos)
+    .set('telefono', usuario.telefono)
     .set('cedula',usuario.cedula)
     .set('correo',usuario.correo)
     .set('contrasena',usuario.contrasena);
 
     return this.http.post(
-      this.url2+correop,body.toString,
+      this.url2+correop,
+      body.toString(),
       {
         headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
         responseType: 'text'
       }
     );
+    //return this.http.post<Usuario>(this.url,usuario);
+
   }
 
   

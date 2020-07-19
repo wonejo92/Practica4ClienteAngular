@@ -10,14 +10,12 @@ import { Page404Component } from './Components/page404/page404.component';
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
-<<<<<<< HEAD
 import { ModificarComponent } from './Components/modificar/modificar.component';
-=======
 //import { EliminarComponent } from './Components/eliminar/eliminar.component';
 //import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 //import { CarritoComponent } from './Components/carrito/carrito.component';
 
->>>>>>> dad68ef29ee86e35821f02b28c3454afe0fcca90
+
 
 
 
@@ -37,12 +35,9 @@ const routes: Routes = [
 
 
 {path:'CarritoCompras',component:CarritoComponent},
-<<<<<<< HEAD
 {path:'Modificar/:correop',component:ModificarComponent},
-=======
 
 
->>>>>>> dad68ef29ee86e35821f02b28c3454afe0fcca90
 {path:'**', component:Page404Component}
 ];
 
