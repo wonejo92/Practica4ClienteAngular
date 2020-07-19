@@ -7,6 +7,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import {  InicioSesionComponent} from './Components/inicio-sesion/inicio-sesion.component';
 import { Page404Component } from './Components/page404/page404.component';
+import { CarritoComponent } from './Components/carrito/carrito.component';
 
 
 
@@ -18,6 +19,8 @@ const routes: Routes = [
 {path:'Productos/:nombre/:categoria', component:ProductosComponent},
 {path:'Usuarios', component:UsuariosComponent},
 {path:'InicioSesion', component:InicioSesionComponent},
+{path:'CarritoCompras',component:CarritoComponent},
+
 {path:'**', component:Page404Component}
 ];
 

@@ -2,7 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { BodegasService } from '../../Services/bodegas.service';
 import { Bodega } from '../../Modelo/Bodegas';
 import { ActivatedRoute } from '@angular/router';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-bodegas',
   templateUrl: './bodegas.component.html',
@@ -15,7 +15,7 @@ export class BodegasComponent implements OnInit {
   public bode:Bodega;
 
 
-  constructor(private BodService: BodegasService) {
+  constructor(private BodService: BodegasService,private router:Router) {
   
    }
 
@@ -31,7 +31,8 @@ export class BodegasComponent implements OnInit {
 
 
   }
-  param(){
-   
-  } 
+  mensaje(){
+    console.log('FUNCIONA')
+    this.router.navigate(['CarritoCompras'])
+  }
 }

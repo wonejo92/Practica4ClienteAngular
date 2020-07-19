@@ -16,6 +16,7 @@ import { Page404Component } from './Components/page404/page404.component';
 import { PersonaService } from './Services/persona.service';
 import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.component';
 import { BodegasService } from './Services/bodegas.service';
+import { CarritoComponent } from './Components/carrito/carrito.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BodegasService } from './Services/bodegas.service';
     HomeComponent,
     UsuariosComponent,
     Page404Component,
-    InicioSesionComponent
+    InicioSesionComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
