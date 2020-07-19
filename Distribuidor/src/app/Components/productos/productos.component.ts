@@ -25,10 +25,12 @@ export class ProductosComponent implements OnInit {
   public productosFactura: any=[];
 
   public ObjProductos: any=[];
+  public correoP: string;
   
   constructor(private proService: ProductosService,private actRoute:ActivatedRoute, private router:Router ) { 
    // this.nombre=actRoute.snapshot.params.nombre;
    // this.categoria=actRoute.snapshot.params.categoria;
+   this.correoP=actRoute.snapshot.params.correop;
     this.produc();
     console.log(this.nombre);
     console.log(this.categoria);
@@ -134,7 +136,7 @@ console.log('---Productos agregados a la lista---', this.ObjProductos)
 }
 mensaje(){
   console.log('FUNCIONA')
-  this.router.navigate(['CarritoCompras'])
+  this.router.navigate(['CarritoCompras/',this.correoP])
 }
 /*
 factura(){

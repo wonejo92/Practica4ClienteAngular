@@ -33,6 +33,7 @@ export class InicioSesionComponent implements OnInit {
     this.dataService.iniciar(this.InicioDetails).subscribe((data: {}) => {
       console.log('data')
       let correop=data
+      console.log('Estamos en el ADDINICIOSESION')
       console.log(correop)
       return this.router.navigate(['/home/',correop])
     })

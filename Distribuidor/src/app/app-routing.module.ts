@@ -10,22 +10,39 @@ import { Page404Component } from './Components/page404/page404.component';
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
+<<<<<<< HEAD
 import { ModificarComponent } from './Components/modificar/modificar.component';
+=======
+//import { EliminarComponent } from './Components/eliminar/eliminar.component';
+//import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
+//import { CarritoComponent } from './Components/carrito/carrito.component';
+
+>>>>>>> dad68ef29ee86e35821f02b28c3454afe0fcca90
 
 
 
 const routes: Routes = [
 {path: '', redirectTo:'/home', pathMatch:'full'},
 {path:'home/:correop', component:HomeComponent},
-{path:'Bodegas', component:BodegasComponent},
-{path:'Categorias/:nombre', component:CategoriasComponent},
-{path:'Productos/:nombre/:categoria', component:ProductosComponent},
+{path:'Bodegas/:correop', component:BodegasComponent},
+{path:'Categorias/:nombre/:correop', component:CategoriasComponent},
+{path:'Productos/:nombre/:categoria/:correop', component:ProductosComponent},
 {path:'Usuarios', component:UsuariosComponent},
 {path:'InicioSesion', component:InicioSesionComponent},
 {path:'Eliminar' ,component:EliminarComponent},
 {path:'ActivarCuenta' ,component:ActivarCuentaComponent},
+
+
+{path:'CarritoCompras/:correop',component:CarritoComponent},
+
+
 {path:'CarritoCompras',component:CarritoComponent},
+<<<<<<< HEAD
 {path:'Modificar/:correop',component:ModificarComponent},
+=======
+
+
+>>>>>>> dad68ef29ee86e35821f02b28c3454afe0fcca90
 {path:'**', component:Page404Component}
 ];
 

@@ -8,6 +8,7 @@ import { Producto } from '../Modelo/Producto';
 export class ProductosService {
   private url : string;
   private urlProductos: string;
+  private urlfacturarTotal: string;
   private cantidad:number;
 
 
@@ -17,6 +18,7 @@ export class ProductosService {
   constructor(private http: HttpClient) { 
   this.url = '/Distribuidor/rest/prueba/ProductosByBodegaCategorias/'
   this.urlProductos='/Distribuidor/rest/prueba/AgregarProductosLista/'
+  this.urlfacturarTotal='/Distribuidor/rest/prueba/facturarTotal/'
   }
   /*
   getProductos(){
@@ -84,8 +86,13 @@ export class ProductosService {
     )
   }
 
-  
-
-
-
+  facturarTotal(TotalF:string,correoP: string,subtotal:string){
+    console.log('total final en angular',TotalF)
+    return this.http.post(
+      this.urlfacturarTotal+TotalF+"/"+correoP+"/"+subtotal,{
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        responseType: 'text'
+      }
+    )
+  }
 }

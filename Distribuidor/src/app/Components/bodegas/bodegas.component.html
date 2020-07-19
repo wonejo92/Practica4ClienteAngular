@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" [routerLink]="['/home/',correoP]">Home <span class="sr-only">(current)</span></a>
                 <input (click)="mensaje()" type=image src="assets/Imganes/carrito.jpg" width="50" height="50">
             </div>
         </div>
@@ -28,7 +28,7 @@
     <hr>
     <div *ngFor='let bodega of bodegas'>
         <h2>{{bodega.nombre}}</h2>
-        <a [routerLink]="['/Categorias/',bodega.nombre]"> Go Categorias</a>
+        <a [routerLink]="['/Categorias/',bodega.nombre,correoP]"> Go Categorias</a>
     </div>
 
 </body>

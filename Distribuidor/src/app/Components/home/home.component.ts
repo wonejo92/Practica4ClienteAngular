@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { IniciosesionService } from '../../Services/iniciosesion.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+//import {Router} from '@angular/router';
+
+
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -15,6 +21,10 @@ export class HomeComponent implements OnInit {
   constructor(public dataService: IniciosesionService,private actRoute:ActivatedRoute,  public router: Router) { 
   this.correop =actRoute.snapshot.params.correop;
   }
+
+
+  //constructor(private router:Router) { }
+
 
   ngOnInit(): void {
    
@@ -36,12 +46,15 @@ redi(){
 
   mensaje(){
     console.log('FUNCIONA')
-    this.router.navigate(['CarritoCompras'])
+    this.router.navigate(['CarritoCompras/',this.correop])
   }
+
+
 
   actualizar(){
     console.log(this.correop)
     this.router.navigate(['/Modificar',this.correop])
   }
+
 
 }
