@@ -2,6 +2,7 @@ import {  Component, OnInit,Input} from '@angular/core';
 import { CategoriasService } from '../../Services/categorias.service';
 import { ActivatedRoute } from '@angular/router';
 import { BodegasService } from '../../Services/bodegas.service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
@@ -16,7 +17,7 @@ export class CategoriasComponent implements OnInit {
   public categorias: any=[];
   public productos: any=[];
   
-  constructor(private CatServise: CategoriasService,private actRoute:ActivatedRoute,private BodService: BodegasService) {
+  constructor(private CatServise: CategoriasService,private actRoute:ActivatedRoute,private BodService: BodegasService,private router:Router) {
    //this.produc();
    this.nombre=actRoute.snapshot.params.nombre;
    console.log(this.nombre)
@@ -31,6 +32,10 @@ export class CategoriasComponent implements OnInit {
       console.log(error)
     }
     );
+  }
+  mensaje(){
+    console.log('FUNCIONA')
+    this.router.navigate(['CarritoCompras'])
   }
 
  /* produc(){

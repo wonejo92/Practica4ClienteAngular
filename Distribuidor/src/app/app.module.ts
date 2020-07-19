@@ -16,8 +16,12 @@ import { Page404Component } from './Components/page404/page404.component';
 import { PersonaService } from './Services/persona.service';
 import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.component';
 import { BodegasService } from './Services/bodegas.service';
+<<<<<<< HEAD
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
+=======
+import { CarritoComponent } from './Components/carrito/carrito.component';
+>>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
 
 
 @NgModule({
@@ -30,8 +34,12 @@ import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuen
     UsuariosComponent,
     Page404Component,
     InicioSesionComponent,
+<<<<<<< HEAD
     EliminarComponent,
     ActivarCuentaComponent
+=======
+    CarritoComponent
+>>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
   ],
   imports: [
     BrowserModule,

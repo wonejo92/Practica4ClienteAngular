@@ -23,11 +23,10 @@ export class ProductosComponent implements OnInit {
   //Variables para la cnatidad de productos
   public cantidad:string;
   public productosFactura: any=[];
-  public router: Router;
 
   public ObjProductos: any=[];
   
-  constructor(private proService: ProductosService,private actRoute:ActivatedRoute ) { 
+  constructor(private proService: ProductosService,private actRoute:ActivatedRoute, private router:Router ) { 
    // this.nombre=actRoute.snapshot.params.nombre;
    // this.categoria=actRoute.snapshot.params.categoria;
     this.produc();
@@ -113,8 +112,6 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
  producto.cantidad=cantidad;
  producto.stock=stock;
  
-  
- 
 
  if(localStorage.getItem('ListProducts')){
    
@@ -132,16 +129,12 @@ addProductoLocalStorange(nombre,descripcion,preciopublico,preciounitario,stock,c
 
  console.log('Producto obtenido',this.produ)
  console.log('Objeto Productos', this.ObjProductos)
+console.log('---Productos agregados a la lista---', this.ObjProductos)
 
- this.proService.AddProductosCarito2(this.ObjProductos)
- .subscribe( (data) =>{
-  //this.pro=data;
-  console.log(data) ;
-}, (error) =>{
-  console.log(error)
 }
-);
-
+mensaje(){
+  console.log('FUNCIONA')
+  this.router.navigate(['CarritoCompras'])
 }
 /*
 factura(){
