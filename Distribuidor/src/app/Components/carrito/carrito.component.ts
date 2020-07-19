@@ -105,9 +105,6 @@ export class CarritoComponent implements OnInit {
     console.log('Se procede a persistir en la BD',this.Arreglo)
   }
 
-
-
-
   facturarTotal(){
     console.log(this.correoP)
 
