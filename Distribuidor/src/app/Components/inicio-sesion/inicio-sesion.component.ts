@@ -11,6 +11,7 @@ import { IniciosesionService } from '../../Services/iniciosesion.service';
 })
 export class InicioSesionComponent implements OnInit {
   usuario :Usuario
+  
 
   @Input() InicioDetails = {
     correo:'', contrasena:''
@@ -30,9 +31,13 @@ export class InicioSesionComponent implements OnInit {
 
   addInicio(dataBill) {
     this.dataService.iniciar(this.InicioDetails).subscribe((data: {}) => {
-      this.router.navigate(['/home'])
+      console.log('data')
+      let correop=data
+      console.log(correop)
+      return this.router.navigate(['/home/',correop])
     })
   }
+
 
 
 }
