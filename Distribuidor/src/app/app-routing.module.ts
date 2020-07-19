@@ -10,6 +10,7 @@ import { Page404Component } from './Components/page404/page404.component';
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
+import { ModificarComponent } from './Components/modificar/modificar.component';
 
 
 
@@ -24,7 +25,7 @@ const routes: Routes = [
 {path:'Eliminar' ,component:EliminarComponent},
 {path:'ActivarCuenta' ,component:ActivarCuentaComponent},
 {path:'CarritoCompras',component:CarritoComponent},
-
+{path:'Modificar/:correop',component:ModificarComponent},
 {path:'**', component:Page404Component}
 ];
 

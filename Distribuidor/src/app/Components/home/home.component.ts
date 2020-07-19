@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   public correop:any
   public coo:any
   constructor(public dataService: IniciosesionService,private actRoute:ActivatedRoute,  public router: Router) { 
-    this.correop =actRoute.snapshot.params.correop;
+  this.correop =actRoute.snapshot.params.correop;
   }
 
   ngOnInit(): void {
@@ -40,7 +40,8 @@ redi(){
   }
 
   actualizar(){
-    
+    console.log(this.correop)
+    this.router.navigate(['/Modificar',this.correop])
   }
 
 }

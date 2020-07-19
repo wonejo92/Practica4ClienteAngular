@@ -19,6 +19,7 @@ import { BodegasService } from './Services/bodegas.service';
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
+import { ModificarComponent } from './Components/modificar/modificar.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CarritoComponent } from './Components/carrito/carrito.component';
     InicioSesionComponent,
     EliminarComponent,
     ActivarCuentaComponent,
-    CarritoComponent
+    CarritoComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
