@@ -7,12 +7,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { UsuariosComponent } from './Components/usuarios/usuarios.component';
 import {  InicioSesionComponent} from './Components/inicio-sesion/inicio-sesion.component';
 import { Page404Component } from './Components/page404/page404.component';
-<<<<<<< HEAD
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
-=======
 import { CarritoComponent } from './Components/carrito/carrito.component';
->>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
 
 
 
@@ -24,13 +21,10 @@ const routes: Routes = [
 {path:'Productos/:nombre/:categoria', component:ProductosComponent},
 {path:'Usuarios', component:UsuariosComponent},
 {path:'InicioSesion', component:InicioSesionComponent},
-<<<<<<< HEAD
 {path:'Eliminar' ,component:EliminarComponent},
 {path:'ActivarCuenta' ,component:ActivarCuentaComponent},
-=======
 {path:'CarritoCompras',component:CarritoComponent},
 
->>>>>>> 48c654bbe9d1d5d71c3be8241f13c913deb76ff3
 {path:'**', component:Page404Component}
 ];
 

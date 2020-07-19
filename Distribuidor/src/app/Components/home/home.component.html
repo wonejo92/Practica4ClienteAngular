@@ -1,4 +1,3 @@
-<p>home works!</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +13,17 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="nav-item">
-            <a class="nav-link" [routerLink]="['/Modificar']" > Modificar Cuenta</a> <button class="btn btn-primary" (click)="eliminar()">Eliminar Cuenta</button>
+            <button class="btn btn-primary" (click)="actualizar()">Modificar Cuenta</button> 
         </ul>
-      </nav>
-      <p>Correo recu</p>
-      <p>{{correop}}</p>
+
+        <ul class="nav-item">
+        <button class="btn btn-primary" (click)="eliminar()">Eliminar Cuenta </button>
+        </ul>
+    </nav>
+     
 </body>
 
-</head>
+
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
