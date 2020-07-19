@@ -17,10 +17,16 @@ import { PersonaService } from './Services/persona.service';
 import { InicioSesionComponent } from './Components/inicio-sesion/inicio-sesion.component';
 import { BodegasService } from './Services/bodegas.service';
 
+
 import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 
 import { CarritoComponent } from './Components/carrito/carrito.component';
+
+
+//import { EliminarComponent } from './Components/eliminar/eliminar.component';
+//import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
+//import { CarritoComponent } from './Components/carrito/carrito.component';
 
 
 
@@ -35,9 +41,13 @@ import { CarritoComponent } from './Components/carrito/carrito.component';
     Page404Component,
     InicioSesionComponent,
 
+
     EliminarComponent,
     ActivarCuentaComponent,
 
+
+    EliminarComponent,
+    ActivarCuentaComponent,
     CarritoComponent
   ],
   imports: [

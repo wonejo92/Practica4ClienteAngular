@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IniciosesionService } from '../../Services/iniciosesion.service';
-//import { InicioSesionComponent } from '../inicio-sesion/inicio-sesion.component';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 //import {Router} from '@angular/router';
+
+
+
+
 
 
 @Component({
@@ -18,7 +22,9 @@ export class HomeComponent implements OnInit {
     this.correop =actRoute.snapshot.params.correop;
   }
 
+
   //constructor(private router:Router) { }
+
 
   ngOnInit(): void {
    
@@ -26,28 +32,10 @@ export class HomeComponent implements OnInit {
 
 
   eliminar(){
-   //this.correop= this.dataComponent.correop
+   
    console.log(this.correop)
-   /*
-   let corr=JSON.stringify(this.correop)
-   
-    console.log('corr')
-    console.log(corr)
-   
-    let corr1=JSON.parse(corr)
-    console.log(corr1)
-    */
    this.dataService.eliminacion(this.correop).subscribe((data)  => {
     this.redi()
-   /*console.log('data')
-    let da=data
-    console.log(da)
-    alert('entro')
-   */
-    //this.router.navigate(['/InicioSesion'])
-    //return this.router.navigate(['/InicioSesion'])
-    //return this.router.navigateByUrl('/InicioSesion')
-    //window.location.reload();
   })
 }
 
@@ -59,6 +47,12 @@ redi(){
   mensaje(){
     console.log('FUNCIONA')
     this.router.navigate(['CarritoCompras/',this.correop])
+  }
+
+
+
+  actualizar(){
+    
   }
 
 
