@@ -3,6 +3,7 @@ import { IniciosesionService } from '../../Services/iniciosesion.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Usuario } from '../../Modelo/persona';
 
+
 @Component({
   selector: 'app-modificar',
   templateUrl: './modificar.component.html',
@@ -13,9 +14,9 @@ export class ModificarComponent implements OnInit {
   usuario:Usuario
 
   @Input() ActualizarDetails = {
-    nombres:'',apellidos:'',telefono:'',
-    correo:'', contrasena:''
+    nombres:'',apellidos:'',telefono:'',correo:'', contrasena:''
   }
+
   constructor(public dataService: IniciosesionService,private actRoute:ActivatedRoute,  public router: Router) {
     this.correop =actRoute.snapshot.params.correop;
    }

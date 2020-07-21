@@ -50,7 +50,7 @@ import { ModificarComponent } from './Components/modificar/modificar.component';
     EliminarComponent,
     ActivarCuentaComponent,
 
-
+    ModificarComponent,
     EliminarComponent,
     ActivarCuentaComponent,
     CarritoComponent,
