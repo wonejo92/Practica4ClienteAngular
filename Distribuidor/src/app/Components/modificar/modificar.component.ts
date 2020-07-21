@@ -13,7 +13,7 @@ export class ModificarComponent implements OnInit {
   usuario:Usuario
 
   @Input() ActualizarDetails = {
-    nombres:'',apellidos:'',telefono:'',cedula:'',
+    nombres:'',apellidos:'',telefono:'',
     correo:'', contrasena:''
   }
   constructor(public dataService: IniciosesionService,private actRoute:ActivatedRoute,  public router: Router) {

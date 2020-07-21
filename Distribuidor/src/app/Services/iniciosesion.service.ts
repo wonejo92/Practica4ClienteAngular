@@ -55,7 +55,6 @@ export class IniciosesionService {
     .set('nombres', usuario.nombres)
     .set('apellidos', usuario.apellidos)
     .set('telefono', usuario.telefono)
-    .set('cedula',usuario.cedula)
     .set('correo',usuario.correo)
     .set('contrasena',usuario.contrasena);
 
