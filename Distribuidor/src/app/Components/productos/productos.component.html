@@ -20,7 +20,34 @@
 
     </nav>
     <hr>
-    <div *ngFor='let producto of productos'>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio Publico</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let producto of productos; let indice = index'>
+                <td>{{productos[indice].producto.nombre}}</td>
+                <td>{{productos[indice].producto.descripcion}}</td>
+                <td>{{productos[indice].producto.preciopublico}}</td>
+                <td>{{productos[indice].producto.stock}}</td>
+                <td><input type='text' [(ngModel)]="cantidad"> &nbsp;
+                    <button (click)="addProductoLocalStorange(productos[indice].producto.nombre,
+                    productos[indice].producto.descripcion,productos[indice].producto.preciopublico,
+                    productos[indice].producto.preciounitario,productos[indice].producto.stock,cantidad)" class="btn btn-primary" type="submit">AddProducts</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!--
+    <div *ngFor='let producto of productos; let indice = index'>
 
         <label>Productos</label>
         <p>{{producto.stock}}</p>
@@ -37,16 +64,15 @@
         productos[0].producto.descripcion,productos[0].producto.preciopublico,
         productos[0].producto.preciounitario,productos[0].producto.stock,cantidad)" class="btn btn-primary" type="submit">Order</button>
 
-        <!--Boton para agregar productos-->
+        
         <input type='text' [(ngModel)]="cantidad">
         <button (click)="addProductoLocalStorange(productos[0].producto.nombre,
         productos[0].producto.descripcion,productos[0].producto.preciopublico,
         productos[0].producto.preciounitario,productos[0].producto.stock,cantidad)" class="btn btn-primary" type="submit">AddProducts</button>
 
     </div>
+    -->
 
 </body>
-
-<p>Tu opcion es : {{option}}</p>
 
 </html>

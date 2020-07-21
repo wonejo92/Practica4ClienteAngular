@@ -24,14 +24,28 @@
         </div>
     </nav>
 
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre Categoria</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let categoria of categorias; let indice = index'>
+                <td>{{categoria.nombre}}</td>
+                <a class="badge badge-primary text-wrap" style="width: 6rem;" [routerLink]="['/Productos/',nombre,categoria.nombre,correop]"> Go Categorias</a>
+            </tr>
+        </tbody>
+    </table>
 
-
-    <hr>
+    <!--
     <div *ngFor='let categoria of categorias'>
         <h2>{{categoria.nombre}}</h2>
         <h2>{{categoria.id}}</h2>
         <a [routerLink]="['/Productos/',nombre,categoria.nombre,correop]"> Go Categorias</a>
     </div>
+    -->
 
 </body>
 

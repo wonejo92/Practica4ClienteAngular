@@ -49,8 +49,10 @@ redi(){
     this.router.navigate(['CarritoCompras/',this.correop])
   }
 
-
-
+  Mensaje2(){
+    console.log('FUNCIONA')
+    this.router.navigate(['Pedidos/',this.correop])
+  }
   actualizar(){
     console.log(this.correop)
     this.router.navigate(['/Modificar',this.correop])

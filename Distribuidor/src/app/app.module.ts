@@ -22,6 +22,10 @@ import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 
 import { CarritoComponent } from './Components/carrito/carrito.component';
+
+import { PedidosService } from './Services/pedidos.service';
+import { PedidosComponent } from './Components/pedidos/pedidos.component';
+
 import { ModificarComponent } from './Components/modificar/modificar.component';
 
 
@@ -50,7 +54,8 @@ import { ModificarComponent } from './Components/modificar/modificar.component';
     EliminarComponent,
     ActivarCuentaComponent,
     CarritoComponent,
-    ModificarComponent
+    PedidosComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,7 @@ import { ModificarComponent } from './Components/modificar/modificar.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ProductosService,PersonaService,BodegasService],
+  providers: [ProductosService,PersonaService,BodegasService,PedidosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
