@@ -20,9 +20,6 @@
 
 <body>
 
-
-
-
     <form class="form-group text-center" (ngSubmit)="actualiza(ActualizarDetails)" #userForm="ngForm">
         <div class="form-group">
             <h1>Modificar cuenta</h1>
@@ -31,7 +28,8 @@
         <div class="form-group">
             <label class="form-group text-center">
                 Nombres:
-                <input [(ngModel)]="ActualizarDetails.nombres" class="form-control" type="text" required>
+                <input [(ngModel)]="ActualizarDetails.nombres" class="form-control" type="text"
+                    [ngModelOptions]="{standalone: true}" required>
             </label>
         </div>
 
@@ -39,7 +37,7 @@
             <label class="form-group text-center">
                 Apellidos:
                 <input [(ngModel)]="ActualizarDetails.apellidos" class="form-control" type="text"
-                     required>
+                    [ngModelOptions]="{standalone: true}" required>
             </label>
         </div>
 
@@ -47,7 +45,7 @@
             <label class="form-group text-center">
                 Telefono:
                 <input [(ngModel)]="ActualizarDetails.telefono" class="form-control" type="text"
-                    required>
+                    [ngModelOptions]="{standalone: true}" required minlength="10" maxlength="10">
             </label>
         </div>
 
@@ -55,7 +53,7 @@
             <label class="form-group text-center">
                 Correo:
                 <input [(ngModel)]="ActualizarDetails.correo" class="form-control" type="text"
-                     required>
+                    [ngModelOptions]="{standalone: true}" required>
             </label>
         </div>
 
@@ -63,7 +61,7 @@
             <label class="form-group text-center">
                 Contraseña:
                 <input [(ngModel)]="ActualizarDetails.contrasena" class="form-control" type="text"
-                    required>
+                    [ngModelOptions]="{standalone: true}" required>
             </label>
         </div>
 

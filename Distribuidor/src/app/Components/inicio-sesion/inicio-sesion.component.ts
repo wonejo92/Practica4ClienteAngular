@@ -35,7 +35,12 @@ export class InicioSesionComponent implements OnInit {
       let correop=data
       console.log('Estamos en el ADDINICIOSESION')
       console.log(correop)
-      return this.router.navigate(['/home/',correop])
+      if(correop =='No creado'){
+        return this.router.navigate(['/InicioSesion'])
+      }else{
+        return this.router.navigate(['/home/',correop])
+      }
+      
     })
   }
 
