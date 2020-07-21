@@ -20,7 +20,13 @@
 
 <body>
 
-    <form class="form-group text-center" (ngSubmit)="actualiza(ActualizarDetails)" #userForm="ngForm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav-item">
+           <button class="btn btn-primary" (click)="atras()">Atras</button>
+        </ul>
+    </nav>
+
+    <form class="form-group text-center" (ngSubmit)="actualiza(ActualizarDetails)" [formGroup]="user" #userForm="ngForm">
         <div class="form-group">
             <h1>Modificar cuenta</h1>
         </div>
@@ -29,7 +35,7 @@
             <label class="form-group text-center">
                 Nombres:
                 <input [(ngModel)]="ActualizarDetails.nombres" class="form-control" type="text"
-                    [ngModelOptions]="{standalone: true}" required>
+                formControlName="nombres" required>
             </label>
         </div>
 
@@ -37,7 +43,7 @@
             <label class="form-group text-center">
                 Apellidos:
                 <input [(ngModel)]="ActualizarDetails.apellidos" class="form-control" type="text"
-                    [ngModelOptions]="{standalone: true}" required>
+                formControlName="apellidos" required>
             </label>
         </div>
 
@@ -45,7 +51,7 @@
             <label class="form-group text-center">
                 Telefono:
                 <input [(ngModel)]="ActualizarDetails.telefono" class="form-control" type="text"
-                    [ngModelOptions]="{standalone: true}" required minlength="10" maxlength="10">
+                formControlName="telefono" required minlength="10" maxlength="10">
             </label>
         </div>
 
@@ -53,7 +59,7 @@
             <label class="form-group text-center">
                 Correo:
                 <input [(ngModel)]="ActualizarDetails.correo" class="form-control" type="text"
-                    [ngModelOptions]="{standalone: true}" required>
+                formControlName="correo" required>
             </label>
         </div>
 
@@ -61,7 +67,7 @@
             <label class="form-group text-center">
                 Contraseña:
                 <input [(ngModel)]="ActualizarDetails.contrasena" class="form-control" type="text"
-                    [ngModelOptions]="{standalone: true}" required>
+                formControlName="contrasena" required>
             </label>
         </div>
 
