@@ -21,7 +21,7 @@
       </nav>
 
 
-<form  class="form-group text-center" (ngSubmit)="add(UsuarioDetails)" #userForm="ngForm" >
+<form  class="form-group text-center" (ngSubmit)="add(UsuarioDetails)" [formGroup]="user" #userForm="ngForm" >
     <div class="form-group">
         <h1>Creacion de cuenta</h1>
     </div>
@@ -29,42 +29,42 @@
 <div class="form-group">
 <label  class="form-group text-center">
     Nombre:
-    <input [(ngModel)]="UsuarioDetails.nombres" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
+    <input [(ngModel)]="UsuarioDetails.nombres" class="form-control" type="text"   formControlName="nombres"  required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Apellido:
-    <input [(ngModel)]="UsuarioDetails.apellidos" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
+    <input [(ngModel)]="UsuarioDetails.apellidos" class="form-control" type="text"   formControlName="apellidos" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Telefono:
-    <input [(ngModel)]="UsuarioDetails.telefono" class="form-control" type="text" [ngModelOptions]="{standalone: true}" required minlength="10" maxlength="10">
+    <input [(ngModel)]="UsuarioDetails.telefono" class="form-control" type="text" formControlName="telefono" required minlength="10" maxlength="10">
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Cedula:
-    <input [(ngModel)]="UsuarioDetails.cedula" class="form-control" type="text" [ngModelOptions]="{standalone: true}" required minlength="10" maxlength="10">
+    <input [(ngModel)]="UsuarioDetails.cedula" class="form-control" type="text"  formControlName="cedula" required minlength="10" maxlength="10">
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Correo:
-    <input [(ngModel)]="UsuarioDetails.correo" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
+    <input [(ngModel)]="UsuarioDetails.correo" class="form-control" type="text"   formControlName="correo" required>
 </label>
 </div>
 
 <div class="form-group">
 <label class="form-group text-center">
     Contraseña:
-    <input [(ngModel)]="UsuarioDetails.contrasena" class="form-control" type="text"  [ngModelOptions]="{standalone: true}" required>
+    <input [(ngModel)]="UsuarioDetails.contrasena" class="form-control" type="text"  formControlName="contrasena" required>
 </label>
 </div>
 
