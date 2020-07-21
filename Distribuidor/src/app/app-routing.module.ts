@@ -11,9 +11,11 @@ import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { PedidosComponent } from './Components/pedidos/pedidos.component';
+import { ModificarComponent } from './Components/modificar/modificar.component';
 //import { EliminarComponent } from './Components/eliminar/eliminar.component';
 //import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 //import { CarritoComponent } from './Components/carrito/carrito.component';
+
 
 
 
@@ -34,6 +36,7 @@ const routes: Routes = [
 
 
 {path:'CarritoCompras',component:CarritoComponent},
+{path:'Modificar/:correop',component:ModificarComponent},
 
 {path:'Pedidos/:correop',component:PedidosComponent},
 

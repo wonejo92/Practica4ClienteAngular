@@ -22,8 +22,11 @@ import { EliminarComponent } from './Components/eliminar/eliminar.component';
 import { ActivarCuentaComponent } from './Components/activar-cuenta/activar-cuenta.component';
 
 import { CarritoComponent } from './Components/carrito/carrito.component';
+
 import { PedidosService } from './Services/pedidos.service';
 import { PedidosComponent } from './Components/pedidos/pedidos.component';
+
+import { ModificarComponent } from './Components/modificar/modificar.component';
 
 
 //import { EliminarComponent } from './Components/eliminar/eliminar.component';
@@ -51,7 +54,8 @@ import { PedidosComponent } from './Components/pedidos/pedidos.component';
     EliminarComponent,
     ActivarCuentaComponent,
     CarritoComponent,
-    PedidosComponent
+    PedidosComponent,
+
   ],
   imports: [
     BrowserModule,
